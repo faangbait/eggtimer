@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <title>Egg Timer</title>
+        <script>
+            function countdown(i){
+                var cd_text = document.getElementById("timer_countdown");
+                cd_text.innerText = i + " seconds";
+                setTimeout(finished, i*1000)
+            }
+
+            function finished(){
+                var cd_text = document.getElementById("timer_countdown");
+                alert("Time's up!");
+                cd_text.innerText = "";
+            }
+        </script>
+    </head>
+    <body>
+        <h1>An Egg Timer</h1>
+        <h2><span id="timer_countdown"></span></h2>
+        <select id="timer_select" name="timer" onchange="countdown(value);">
+            <option></option>
+            <option value="1">1 second</option>
+            <option value="30">30 seconds</option>
+            <option value="180">3 minutes</option>
+        </select>
+    </body>
+</html>
